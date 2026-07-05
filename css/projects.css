@@ -1,0 +1,21 @@
+/* ============================================================
+   projects.css — styles unique to projects.html
+   Load after base.css
+   ============================================================ */
+
+/* The full project list gets an extra column on wide screens,
+   since it holds 5 cards instead of the homepage's 2-card preview. */
+@media (min-width: 1000px) {
+  .page-projects .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+  .page-projects .project-card {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-projects .project-grid { grid-template-columns: 1fr; }
+}

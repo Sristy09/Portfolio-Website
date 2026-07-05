@@ -1,0 +1,296 @@
+/* ============================================================
+   home.css — styles unique to index.html
+   Load after base.css
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 900px 500px at 80% 15%, rgba(226,166,60,0.09), transparent 60%),
+    var(--ink);
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--brass);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+.hero-role-large {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(26px, 3.4vw, 40px);
+  color: var(--brass);
+  margin-top: 16px;
+  min-height: 1.2em;
+  line-height: 1.2;
+}
+.hero-role-large .cursor {
+  color: var(--paper-dim);
+  font-style: normal;
+}
+
+.hero-desc {
+  margin-top: 22px;
+  color: var(--muted);
+  max-width: 1000px;
+  font-size: 16px;
+  text-align: justify;
+
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-coords {
+  margin-top: 32px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Credential badge (hero pill link) ---------- */
+.credential-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--teal);
+  border: 1px solid rgba(95,184,171,0.35);
+  background: rgba(95,184,171,0.06);
+  padding: 7px 13px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.credential-badge i { font-size: 13px; }
+
+/* ---------- Portrait card ---------- */
+.portrait-card {
+  position: relative;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Smaller frame */
+.portrait-frame {
+  width: min(300px, 85%);
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image */
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover effect */
+.portrait-card:hover .portrait-frame {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
+}
+
+.portrait-card:hover .portrait-frame img {
+  transform: scale(1.04);
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* Soft overlay */
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.06),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.portrait-tag {
+  position: absolute;
+  bottom: -16px; left: -16px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--paper-dim);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+.portrait-tag strong { color: var(--brass); display: block; font-size: 16px; }
+
+/* ---------- Stat row (professional summary card) ---------- */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.stat-row .stat .num {
+  font-family: var(--font-display);
+  font-size: 34px;
+  color: var(--brass);
+  font-weight: 600;
+}
+.stat-row .stat .label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+/* ---------- Skills ---------- */
+/* ---------- Skills Grid ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* ---------- Skill Card ---------- */
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow effect */
+.skill-group::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -30%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(226,166,60,0.10), transparent 70%);
+  pointer-events: none;
+}
+
+/* hover card lift */
+.skill-group:hover {
+  transform: translateY(-6px);
+  border-color: var(--brass-dim);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* ---------- Title ---------- */
+.skill-group h4 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brass);
+  margin-bottom: 14px;
+}
+
+/* ---------- Chip Container ---------- */
+.skill-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---------- Chips (Modern look) ---------- */
+.chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--paper-dim);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover effect */
+.chip:hover {
+  color: var(--paper);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  background: rgba(95,184,171,0.08);
+}
+
+/* small glow underline effect */
+.chip::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--teal);
+  transition: width 0.3s ease;
+}
+
+.chip:hover::after {
+  width: 100%;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .portrait-card { order: -1; margin-bottom: 20px; }
+}
+@media (max-width: 760px) {
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+  .portrait-tag { left: 0; right: 0; margin: 0 auto; width: fit-content; bottom: -18px; }
+}

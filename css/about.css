@@ -1,0 +1,104 @@
+/* ============================================================
+   about.css — styles unique to about.html
+   Load after base.css
+   ============================================================ */
+
+/* ---------- Timeline (education / experience) ---------- */
+.timeline {
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.timeline-item { position: relative; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -33px; top: 4px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 0 0 4px var(--ink), 0 0 0 5px var(--line);
+}
+.timeline-item .when {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.timeline-item h4 { font-size: 18px; margin-top: 6px; }
+.timeline-item .where { color: var(--brass); font-size: 14px; margin-top: 3px; }
+.timeline-item p { color: var(--muted); font-size: 14px; margin-top: 8px; }
+
+/* ---------- Certifications ---------- */
+.cert-list { display: flex; flex-direction: column; }
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cert-item:first-child { border-top: 1px solid var(--line); }
+.cert-item .cert-icon { color: var(--teal); font-size: 18px; flex-shrink: 0; }
+.cert-item h5 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cert-item.featured {
+  border: 1px solid var(--brass-dim);
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: rgba(226,166,60,0.05);
+  margin-bottom: 8px;
+}
+.cert-item.featured:first-child { border-top: 1px solid var(--brass-dim); }
+.cert-item.featured .cert-icon { color: var(--brass); }
+.cert-featured-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brass);
+  border: 1px solid var(--brass-dim);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+/* ---------- Soft skills ---------- */
+.soft-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.soft-item {
+  text-align: center;
+  padding: 20px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.soft-item i { color: var(--brass); font-size: 20px; margin-bottom: 8px; display: block; }
+.soft-item span { font-size: 12.5px; color: var(--paper-dim); font-family: var(--font-mono); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .soft-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .cert-item { flex-wrap: wrap; }
+  .cert-item h5 { font-size: 14px; }
+}
+@media (max-width: 420px) {
+  .soft-grid { grid-template-columns: 1fr 1fr; }
+  .timeline { padding-left: 22px; }
+  .timeline-item::before { left: -27px; }
+}

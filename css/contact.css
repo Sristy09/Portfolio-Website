@@ -1,0 +1,73 @@
+/* ============================================================
+   contact.css — styles unique to contact.html
+   Load after base.css
+   ============================================================ */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+}
+.contact-info h3 { font-size: 22px; margin-bottom: 18px; }
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact-row i {
+  width: 38px; height: 38px;
+  border-radius: 9px;
+  background: var(--surface-2);
+  color: var(--brass);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-row a, .contact-row span { font-size: 14.5px; color: var(--paper-dim); }
+.contact-row a:hover { color: var(--brass); }
+
+.form-field { margin-bottom: 18px; }
+.form-field label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 8px;
+}
+.form-field input, .form-field textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px 14px;
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  transition: border-color 0.2s ease;
+}
+.form-field input:focus, .form-field textarea:focus {
+  outline: none;
+  border-color: var(--brass);
+}
+.form-field textarea { resize: vertical; min-height: 120px; }
+
+.form-status {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin-top: 12px;
+  min-height: 18px;
+}
+.form-status.ok { color: var(--teal); }
+.form-status.err { color: #e07a5f; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .contact-row { flex-wrap: wrap; }
+  .contact-row a, .contact-row span { word-break: break-word; }
+}
