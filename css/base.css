@@ -93,7 +93,7 @@ h1, h2, h3, h4 {
 }
 .section-head p {
   color: var(--muted);
-  max-width: 1000px;
+  max-width: 1200px;
   margin-top: 10px;
   text-align: justify;
 }
@@ -353,7 +353,7 @@ html[data-theme="light"] .theme-toggle {
   border-radius: 16px;
   padding: 40px;
 }
-.summary-block p { color: var(--paper-dim); font-size: 16px; max-width: 1000px; text-align: justify; }
+.summary-block p { color: var(--paper-dim); font-size: 16px; max-width: 1200px; text-align: justify; }
 
 /* ---------- Featured credential spotlight (used on home + about) ---------- */
 .credential-spotlight {
@@ -408,7 +408,7 @@ html[data-theme="light"] .theme-toggle {
   color: var(--paper-dim);
   font-size: 14.5px;
   margin-top: 14px;
-  max-width: 1000px;
+  max-width: 1200px;
   line-height: 1.6;
   text-align: justify;
 }
@@ -442,7 +442,7 @@ html[data-theme="light"] .theme-toggle {
   font-size: clamp(34px, 5vw, 52px);
   margin-top: 12px;
 }
-.page-head p { color: var(--muted); margin-top: 14px; max-width: 1000px;text-align: justify; }
+.page-head p { color: var(--muted); margin-top: 14px; max-width: 1200px;text-align: justify; }
 
 /* ---------- Footer (every page) ---------- */
 .site-footer {
